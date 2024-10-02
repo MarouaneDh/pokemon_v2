@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 
-import { EffectCards } from 'swiper/modules';
+import { EffectCoverflow } from 'swiper/modules';
 import OnePokemon from './OnePokemon';
 import { useParams } from 'react-router-dom';
 
@@ -26,11 +26,20 @@ const OneGenPage = () => {
     }, [dispatch, params])
 
     return (
-        <div>
+        <div style={{ height: '100vh', width: '100vw', display: 'flex', alignItems: 'center' }}>
             <Swiper
-                effect={'cards'}
+                effect={'coverflow'}
                 grabCursor={true}
-                modules={[EffectCards]}
+                centeredSlides={true}
+                slidesPerView={3}
+                coverflowEffect={{
+                    rotate: 50,
+                    stretch: 0,
+                    depth: 100,
+                    modifier: 1,
+                    slideShadows: true,
+                }}
+                modules={[EffectCoverflow]}
                 className="mySwiper"
             >
                 {

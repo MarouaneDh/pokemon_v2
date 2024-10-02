@@ -1,8 +1,8 @@
 .pokemon_name {
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
     font-size: 60px;
     transform: rotate(-50deg);
-    opacity: 0.4;
+    opacity: 0.6;
     text-transform: capitalize;
 }
