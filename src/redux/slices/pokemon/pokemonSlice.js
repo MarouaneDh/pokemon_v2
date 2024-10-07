@@ -41,19 +41,19 @@ export const pokemonSlice = createSlice({
 
             //get one pokemon
             .addCase(getOnePokemeon.pending, (state) => {
-                state.Allpokemons.isLoading = true;
-                state.Allpokemons.status = 'pending'
-                state.Allpokemons.error = null
+                state.OnePokemon.isLoading = true;
+                state.OnePokemon.status = 'pending'
+                state.OnePokemon.error = null
             })
             .addCase(getOnePokemeon.fulfilled, (state, action) => {
-                state.Allpokemons.isLoading = false;
-                state.Allpokemons.status = 'fulfilled'
-                state.Allpokemons.Allpokemons = action.payload.results
+                state.OnePokemon.isLoading = false;
+                state.OnePokemon.status = 'fulfilled'
+                state.OnePokemon.OnePokemon = action.payload
             })
             .addCase(getOnePokemeon.rejected, (state, action) => {
-                state.Allpokemons.isLoading = false;
-                state.Allpokemons.status = 'rejected';
-                state.Allpokemons.error = action.payload;
+                state.OnePokemon.isLoading = false;
+                state.OnePokemon.status = 'rejected';
+                state.OnePokemon.error = action.payload;
             })
     },
 });

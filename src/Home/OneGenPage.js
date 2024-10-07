@@ -8,7 +8,7 @@ import 'swiper/css/effect-cards';
 
 import { EffectCoverflow } from 'swiper/modules';
 import OnePokemon from './OnePokemon';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const OneGenPage = () => {
     const params = useParams()
@@ -26,7 +26,7 @@ const OneGenPage = () => {
     }, [dispatch, params])
 
     return (
-        <div style={{ height: '100vh', width: '100vw', display: 'flex', alignItems: 'center' }}>
+        <div className='one_gen_container'>
             <Swiper
                 effect={'coverflow'}
                 grabCursor={true}
@@ -43,10 +43,12 @@ const OneGenPage = () => {
                 className="mySwiper"
             >
                 {
-                    Allpokemons && Allpokemons?.map((pokemon, index) => {
+                    Allpokemons && Allpokemons?.map((pokemon) => {
                         return (
-                            <SwiperSlide key={index}>
-                                <OnePokemon pokemon={pokemon} key={index} />
+                            <SwiperSlide key={pokemon.name}>
+                                <Link style={{ textDecoration: 'none' }} to={{ pathname: `/pokemon/${pokemon.name}` }}>
+                                    <OnePokemon pokemon={pokemon} key={pokemon.name} />
+                                </Link>
                             </SwiperSlide>
                         )
                     })
