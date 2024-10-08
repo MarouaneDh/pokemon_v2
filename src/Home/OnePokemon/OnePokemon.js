@@ -20,9 +20,9 @@ const OnePokemon = ({ pokemon }) => {
     }, [pokemon])
 
     return (
-        onePokemon ? <div className={`onePokemon ${onePokemon?.types[0]?.type?.name}`} style={{ backgroundImage: `url(${onePokemon?.sprites?.other?.home?.front_default})` }}>
+        onePokemon && <div className={`onePokemon ${onePokemon?.types[0]?.type?.name}`} style={{ backgroundImage: `url(${onePokemon?.sprites?.other?.home?.front_default})` }}>
             <span className='pokemon_name'>{onePokemon.name}</span>
-        </div> : null
+        </div>
     )
 }
 

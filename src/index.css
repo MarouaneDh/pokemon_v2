@@ -48,6 +48,7 @@ body {
 
 .poison {
   background-color: #7e4794;
+  color: white;
 }
 
 .normal {
@@ -72,10 +73,12 @@ body {
 
 .ground {
   background-color: #5a2a0e;
+  color: white;
 }
 
 .fighting {
   background-color: #fd0000;
+  color: white;
 }
 
 .psychic {
@@ -92,6 +95,11 @@ body {
 
 .dark {
   background-color: #252222;
+  color: white;
+}
+
+.steel {
+  background-color: #666666;
 }
 
 .onePokemon {
