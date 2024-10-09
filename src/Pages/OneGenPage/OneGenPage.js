@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllPokemeons } from '../redux/slices/pokemon/pokemonAsyncThunk'
+import { getAllPokemeons } from '../../redux/slices/pokemon/pokemonAsyncThunk'
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 
 import { EffectCoverflow } from 'swiper/modules';
-import OnePokemon from './OnePokemon/OnePokemon';
+import OnePokemon from '../OnePokemonSlide/OnePokemon';
 import { Link, useParams } from 'react-router-dom';
-import OnePokemonSquare from './OneSquarePokemon/OnePokemonSquare';
+import OnePokemonSquare from '../Home/OneSquarePokemon/OnePokemonSquare';
 
 const OneGenPage = () => {
     const params = useParams()
@@ -34,7 +34,7 @@ const OneGenPage = () => {
 
     return (
         <div className='one_gen_container'>
-            <button onClick={toggleView}>Change view</button>
+            <button className='see_all_button' onClick={toggleView}>See all</button>
             {
                 isViewSwiper ?
                     <Swiper

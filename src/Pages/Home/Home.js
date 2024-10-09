@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom';
-import { pokemonGens } from '../staticData';
+import { pokemonGens } from '../../staticData';
 
 const Home = () => {
     return (

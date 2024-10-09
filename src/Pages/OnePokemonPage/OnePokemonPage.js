@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { getOnePokemeon } from '../redux/slices/pokemon/pokemonAsyncThunk'
+
+import { getOnePokemeon } from '../../redux/slices/pokemon/pokemonAsyncThunk'
 
 const OnePokemonPage = () => {
     const params = useParams()
@@ -14,8 +15,6 @@ const OnePokemonPage = () => {
             dispatch(getOnePokemeon(params.id));
         }
     }, [dispatch, params])
-
-    console.log(OnePokemon)
 
     const handleManualPlay = () => {
         if (OnePokemon?.cries?.latest) {

@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Home from './Home/Home';
-import OneGenPage from './Home/OneGenPage';
-import OnePokemonPage from './Home/OnePokemonPage';
+import Home from './Pages/Home/Home'
+import OneGenPage from './Pages/OneGenPage/OneGenPage';
+import OnePokemonPage from './Pages/OnePokemonPage/OnePokemonPage'
 
 function App() {
   return (
