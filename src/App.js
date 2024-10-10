@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import './App.css';
+
 import Home from './Pages/Home/Home'
 import OneGenPage from './Pages/OneGenPage/OneGenPage';
 import OnePokemonPage from './Pages/OnePokemonPage/OnePokemonPage'

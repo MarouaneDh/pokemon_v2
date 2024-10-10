@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link, useParams } from 'react-router-dom';
+
 import { getAllPokemeons } from '../../redux/slices/pokemon/pokemonAsyncThunk'
+
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow } from 'swiper/modules';
+
+import OnePokemon from '../OnePokemonSlide/OnePokemon';
+import OnePokemonSquare from '../Home/OneSquarePokemon/OnePokemonSquare';
 
 import 'swiper/css';
 import 'swiper/css/effect-cards';
-
-import { EffectCoverflow } from 'swiper/modules';
-import OnePokemon from '../OnePokemonSlide/OnePokemon';
-import { Link, useParams } from 'react-router-dom';
-import OnePokemonSquare from '../Home/OneSquarePokemon/OnePokemonSquare';
+import './OneGenPage.css'
 
 const OneGenPage = () => {
     const params = useParams()
@@ -56,7 +59,7 @@ const OneGenPage = () => {
                             Allpokemons && Allpokemons?.map((pokemon) => {
                                 return (
                                     <SwiperSlide key={pokemon.name}>
-                                        <Link style={{ textDecoration: 'none' }} to={{ pathname: `/pokemon/${pokemon.name}` }}>
+                                        <Link className='link' to={{ pathname: `/pokemon/${pokemon.name}` }}>
                                             <OnePokemon pokemon={pokemon} key={pokemon.name} />
                                         </Link>
                                     </SwiperSlide>
